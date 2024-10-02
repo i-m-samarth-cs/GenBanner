@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotional Video Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Promotional Video Generator</h1>
+        <form id="videoForm">
+            <label for="directories">Product Image Directories (comma-separated):</label>
+            <input type="text" id="directories" name="directories" placeholder="e.g., /path1,/path2" required>
+
+            <label for="num_banners">Number of Banners:</label>
+            <input type="number" id="num_banners" name="num_banners" value="10" required>
+
+            <label for="fps">FPS:</label>
+            <input type="number" id="fps" name="fps" value="1" required>
+
+            <button type="submit">Generate Video</button>
+        </form>
+
+        <div id="output" style="display:none;">
+            <h2>Generated Video</h2>
+            <video id="promoVideo" controls></video>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
